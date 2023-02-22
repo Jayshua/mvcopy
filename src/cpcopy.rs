@@ -13,10 +13,11 @@ fn main() {
     let cli = Args::parse();
 
     let mut temp_file = File::create("/tmp/_cpcopy.txt").unwrap();
+    write!(temp_file, "{}\n", std::fs::canonicalize("./").unwrap().display()).unwrap();
 
     for file in &cli.files {
-        let file = std::fs::canonicalize(file).unwrap();
-        write!(temp_file, "{}\n", file.display());
+        println!("{}", file);
+        write!(temp_file, "{}\n", file).unwrap();
     }
 
     if cli.files.len() == 1 {

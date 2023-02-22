@@ -1,0 +1,2 @@
+Instead of using a tmp directory, try to use the X11 or Wayland clipboard.
+Save selected directories to the clipboard in the same format that a GUI file picker does.
